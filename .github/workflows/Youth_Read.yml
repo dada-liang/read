@@ -1,0 +1,200 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# 每日早9点到晚8点每2小时运行一次
+
+name: youAutoRead
+
+on:
+  workflow_dispatch:
+  schedule:
+     - cron: '6 1-22/5 * * *'
+  watch:
+    types: started
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    env:
+      YOUTH_READ: ${{ secrets.YOUTH_READ }}
+      YOUTH_READ2: ${{ secrets.YOUTH_READ2 }}
+      YOUTH_READ3: ${{ secrets.YOUTH_READ3 }}
+      YOUTH_READ4: ${{ secrets.YOUTH_READ4 }}
+      YOUTH_READ5: ${{ secrets.YOUTH_READ5 }}
+      YOUTH_READ6: ${{ secrets.YOUTH_READ6 }}
+      YOUTH_READ7: ${{ secrets.YOUTH_READ7 }}
+      YOUTH_READ8: ${{ secrets.YOUTH_READ8 }}
+      YOUTH_READ9: ${{ secrets.YOUTH_READ9 }}
+      YOUTH_READ10: ${{ secrets.YOUTH_READ10 }}
+      YOUTH_READ11: ${{ secrets.YOUTH_READ11 }}
+      YOUTH_READ12: ${{ secrets.YOUTH_READ12 }}
+      YOUTH_READ13: ${{ secrets.YOUTH_READ13 }}
+      YOUTH_READ14: ${{ secrets.YOUTH_READ14 }}
+      YOUTH_READ15: ${{ secrets.YOUTH_READ15 }}
+      YOUTH_READ16: ${{ secrets.YOUTH_READ16 }}
+      YOUTH_READ17: ${{ secrets.YOUTH_READ17 }}
+      YOUTH_READ18: ${{ secrets.YOUTH_READ18 }}
+      YOUTH_READ19: ${{ secrets.YOUTH_READ19 }}
+      YOUTH_READ20: ${{ secrets.YOUTH_READ20 }}
+      YOUTH_READ21: ${{ secrets.YOUTH_READ21 }}
+      
+      TZ: Asia/shanghai
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install
+        run: |
+          npm install
+          
+      - name: '运行 【youAutoRead一】'
+        if: env.YOUTH_READ
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME }}
+
+      - name: '运行 【youAutoRead二】'
+        if: env.YOUTH_READ2
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ2 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME2 }}
+          
+      - name: '运行 【youAutoRead三】'
+        if: env.YOUTH_READ3
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ3 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME3 }}
+          
+      - name: '运行 【youAutoRead四】'
+        if: env.YOUTH_READ4
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ4 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME4 }}
+      - name: '运行 【youAutoRead五】'
+        if: env.YOUTH_READ5
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ5 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME5 }}
+      - name: '运行 【youAutoRead六】'
+        if: env.YOUTH_READ6
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ6 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME6 }}
+      - name: '运行 【youAutoRead七】'
+        if: env.YOUTH_READ7
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ7 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME7 }}
+      - name: '运行 【youAutoRead八】'
+        if: env.YOUTH_READ8
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ8 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME8 }}
+      - name: '运行 【youAutoRead九】'
+        if: env.YOUTH_READ9
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ9 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME9 }}
+      - name: '运行 【youAutoRead十】'
+        if: env.YOUTH_READ10
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ10 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME10 }}
+      - name: '运行 【youAutoRead十一】'
+        if: env.YOUTH_READ11
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ11 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME11 }}
+      - name: '运行 【youAutoRead十二】'
+        if: env.YOUTH_READ12
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ12 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME12 }}  
+      - name: '运行 【youAutoRead十SAN】'
+        if: env.YOUTH_READ13
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ13 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME13 }}
+      - name: '运行 【youAutoRead十四】'
+        if: env.YOUTH_READ14
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ14 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME14 }}
+      - name: '运行 【youAutoRead十五】'
+        if: env.YOUTH_READ15
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ15 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME15 }}
+      - name: '运行 【youAutoRead十六】'
+        if: env.YOUTH_READ15
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ15 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME15 }}    
+      - name: '运行 【youAutoRead十七】'
+        if: env.YOUTH_READ15
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ15 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME15 }} 
+      - name: '运行 【youAutoRead十八】'
+        if: env.YOUTH_READ15
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ15 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME15 }}
+      - name: '运行 【youAutoRead十九】'
+        if: env.YOUTH_READ15
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ15 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME15 }}
+      - name: '运行 【youAutoRead二十】'
+        if: env.YOUTH_READ15
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ15 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME15 }}
+      - name: '运行 【youAutoRead二十一】'
+        if: env.YOUTH_READ15
+        run: |
+          node task/Youth_Read.js
+        env:
+          YOUTH_READ: ${{ secrets.YOUTH_READ15 }}
+          YOUTH_ATIME: ${{ secrets.YOUTH_ATIME15 }}
