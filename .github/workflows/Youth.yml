@@ -2,7 +2,7 @@ name: Youth
 
 on:
   schedule:
-    - cron: '*/40 5-23 * * *'
+    - cron: '*/60 5-23 * * *'
   workflow_dispatch:
   watch:
     types: [started]
